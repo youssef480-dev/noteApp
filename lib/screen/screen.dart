@@ -80,7 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
           width: double.infinity,
           height: double.infinity,
           padding: EdgeInsets.all(20),
-          child: Column(
+          child: SingleChildScrollView(
+           child:Column(
             children: [
               Row(
                 children: [
@@ -158,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: SizedBox(
-                  height: 300,
+                  height: 400,
                   width: double.infinity,
                   child: ListView.separated(
                     itemCount: HiveHelpers.myNotes.length,
@@ -246,6 +247,8 @@ class _HomeScreenState extends State<HomeScreen> {
             
             ],
           ),
+
+          )
         ),
         
     

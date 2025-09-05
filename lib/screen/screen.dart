@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
     final _textCotroller = TextEditingController();
   
-  
+    List<String> titles =["Bussiness","Entertainment","Work","others"];
     List<Color> colors =[Colors.green,Colors.red,Colors.blue,Colors.yellow,Colors.purple,Colors.green,Colors.red,Colors.blue,Colors.yellow,Colors.purple];
   @override
   Widget build(BuildContext context) {
@@ -99,55 +99,55 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               SizedBox(height: 20,),
-              Row(
-                children: [
-                  Text("Categories",style: TextStyle(color: const Color.fromARGB(255, 109, 136, 225),fontSize: 20,fontWeight: FontWeight.bold),)
-                ],
-              ),
-              SizedBox(height: 10,),
-              Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 125,
-                      child: ListView.separated(
+              // Row(
+              //   children: [
+              //     Text("Categories",style: TextStyle(color: const Color.fromARGB(255, 109, 136, 225),fontSize: 20,fontWeight: FontWeight.bold),)
+              //   ],
+              // ),
+              // SizedBox(height: 10,),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: SizedBox(
+              //         height: 125,
+              //         child: ListView.separated(
                       
-                      itemCount: 5,
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      physics: BouncingScrollPhysics(),
-                      separatorBuilder: (context, index) => SizedBox(width: 20,),
-                      itemBuilder: (context,index)=>Container(
+              //         itemCount: titles.length,
+              //         scrollDirection: Axis.horizontal,
+              //         shrinkWrap: true,
+              //         physics: BouncingScrollPhysics(),
+              //         separatorBuilder: (context, index) => SizedBox(width: 20,),
+              //         itemBuilder: (context,index)=>Container(
                         
-                        height: 300,
-                        width: 200,
+              //           height: 300,
+              //           width: 200,
                     
-                        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                        margin: EdgeInsets.only(bottom: 20),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 17, 48, 101),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("2 notes",style: TextStyle(color: const Color.fromARGB(255, 43, 68, 113),),),
-                            SizedBox(height: 5,),
-                            Text("business",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                            SizedBox(height: 10,),
-                            Text("__________________________",style: TextStyle(color: Colors.blue),)
-                          ],
-                        ),
+              //           padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+              //           margin: EdgeInsets.only(bottom: 20),
+              //           decoration: BoxDecoration(
+              //             color: const Color.fromARGB(255, 17, 48, 101),
+              //             borderRadius: BorderRadius.circular(15),
+              //           ),
+              //           child: Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text("0 notes",style: TextStyle(color: const Color.fromARGB(255, 43, 68, 113),),),
+              //               SizedBox(height: 5,),
+              //               Text(titles[index],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+              //               SizedBox(height: 10,),
+              //               Text("__________________________",style: TextStyle(color: Colors.blue),)
+              //             ],
+              //           ),
 
-                    )
-                    )
-                    ),
+              //       )
+              //       )
+              //       ),
                     
-                    )
-                ],
+              //       )
+              //   ],
 
 
-              ),
+              // ),
            SizedBox(height: 20,),
            Row(
             children: [
@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: SizedBox(
-                  height: 400,
+                  height: 450,
                   width: double.infinity,
                   child: ListView.separated(
                     itemCount: HiveHelpers.myNotes.length,
